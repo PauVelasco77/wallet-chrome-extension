@@ -1,27 +1,33 @@
-export type InputProps = React.ComponentPropsWithoutRef<"input"> & {
+import React from "react";
+import styles from "./input.module.css";
+
+export type InputProps = React.ComponentPropsWithRef<"input"> & {
   label?: string;
   icon?: React.ReactNode;
 };
 
-export default function Input({label, icon, ...rest}: InputProps): JSX.Element {
-  return (
-    <div className='max-w-md px-4 mx-auto mt-12'>
-      {label && (
-        <label htmlFor={rest.id} className='block py-1 text-gray-500 text-xs'>
-          {label}
-        </label>
-      )}
-      <div className='flex items-center text-slate-700 border rounded-md focus-within:border-indigo-600 transition duration-200'>
-        {icon && (
-          <div className='px-3 py-2.5 rounded-l-md bg-gray-50 border-r'>
-            {icon}
-          </div>
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({label, icon, ...rest}, ref) => {
+    return (
+      <div className={styles.container}>
+        {label && (
+          <label htmlFor={rest.id} className={styles.label}>
+            {label}
+          </label>
         )}
-        <input
-          {...rest}
-          className='w-full p-2.5 ml-2 bg-transparent outline-none'
-        />
+        <div className={styles.inputWrapper}>
+          {icon && <div className={styles.icon}>{icon}</div>}
+          <input
+            {...rest}
+            ref={ref}
+            className={`${styles.input} ${icon ? styles.withIcon : ""}`}
+          />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);
+
+Input.displayName = "Input";
+
+export default Input;
