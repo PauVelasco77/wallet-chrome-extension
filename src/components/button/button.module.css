@@ -13,7 +13,20 @@
   background-color: #3b82f6; /* 'hover:bg-blue-500' */
 }
 
-.button:focus {
-  outline: none; /* 'focus:outline-none' */
-  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5); /* 'focus:ring focus:ring-blue-300 focus:ring-opacity-80' */
+.button:disabled {
+  animation: pendingPulse 1.2s ease-in-out 0.6s infinite;
+  pointer-events: none;
+  cursor: unset;
+}
+
+@keyframes pendingPulse {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.9;
+  }
 }
