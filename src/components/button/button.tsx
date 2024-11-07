@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 import styles from "./button.module.css";
 
 export type ButtonProps = React.ComponentPropsWithRef<"button"> & {
@@ -7,8 +8,10 @@ export type ButtonProps = React.ComponentPropsWithRef<"button"> & {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({children, ...rest}, ref) => {
+    const buttonClassNames = cx(styles.button, rest.className);
+
     return (
-      <button ref={ref} {...rest} className={styles.button}>
+      <button ref={ref} {...rest} className={buttonClassNames}>
         {children}
       </button>
     );
