@@ -1,7 +1,7 @@
 .container {
-  padding: 1rem;
-  margin: 0 auto;
-  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .label {
@@ -13,7 +13,6 @@
 .inputWrapper {
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
 }
 
 .icon {
@@ -28,7 +27,7 @@
 .input {
   display: block;
   width: 100%;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 0.75rem;
   font-size: 1rem;
   color: #4b5563;
   background-color: #ffffff;
