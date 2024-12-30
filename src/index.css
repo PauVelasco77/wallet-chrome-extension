@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 100vh;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* COLORS */
+  --color-primary: #2563eb;
+  --color-medium: #666666;
+  --color-light: #e0e0e0;
+  --color-background: #efefef;
+  --color-white: #ffffff;
+
+  /* HEADER */
+  --headline-font-size: 32px;
+  --subtitle-font-size: 16px;
+  --subtitle-2-font-size: 16px;
+  --subtitle-3-font-size: 16px;
+
+  /* TYPOGRAPHY */
+  --body-font-size: 16px;
+  --body-2-font-size: 16px;
+  --body-3-font-size: 16px;
+  --caption-font-size: 12px;
+
+  /* DROP SHADOWS */
+  --drop-shadow-2dp: drop-shadow(0px 1px 3px 1px rgba(0, 0, 0, 0.2));
+  --drop-shadow-6dp: drop-shadow(0px 3px 12px 3px rgba(0, 0, 0, 0.2));
+
+  /* INNER SHADOWS */
+  --inner-shadow-2dp: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+
+  /* FONT WEIGHTS */
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  @media (min-width: 768px) {
+    /* HEADER */
+    --headline-font-size: 24px;
+    --subtitle-font-size: 14px;
+    --subtitle-2-font-size: 12px;
+    --subtitle-3-font-size: 10px;
+
+    /* TYPOGRAPHY */
+    --body-font-size: 14px;
+    --body-2-font-size: 12px;
+    --body-3-font-size: 10px;
+    --caption-font-size: 8px;
+  }
+}
